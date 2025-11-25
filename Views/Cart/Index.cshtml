@@ -1,0 +1,57 @@
+﻿@model List<RestaurantApp.Models.OrderItem>
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<div class="container py-4">
+    <h2>Your Cart</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cartBody"></tbody>
+    </table>
+    <h4>Total: ₹<span id="cartTotal">0</span></h4>
+    <a href="/Order/Checkout" class="btn btn-success" id="checkoutBtn">Checkout</a>
+</div>
+
+<script>
+    function renderCart() {
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        let tbody = document.getElementById('cartBody');
+        tbody.innerHTML = '';
+        let total = 0;
+        cart.forEach((item, index) => {
+            let row = `<tr>
+                <td>${item.Name}</td>
+                <td>₹${item.Price}</td>
+                <td>${item.Quantity}</td>
+                <td>₹${item.Price * item.Quantity}</td>
+                <td><button class="btn btn-sm btn-danger" onclick="removeItem(${index})">Remove</button></td>
+            </tr>`;
+            tbody.innerHTML += row;
+            total += item.Price * item.Quantity;
+        });
+        document.getElementById('cartTotal').innerText = total;
+    }
+
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+
+    // Save cart to checkout
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+        localStorage.setItem('checkoutCart', JSON.stringify(JSON.parse(localStorage.getItem('cart') || '[]')));
+    });
+
+    renderCart();
+</script>

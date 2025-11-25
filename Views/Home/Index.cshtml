@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Explore Categories</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <a asp-controller="Home" asp-action="Menu" asp-route-category="Pizza" class="text-decoration-none">
+                <div class="card h-100 shadow-sm hover-shadow">
+                    <img src="/images/pizza.jpg" class="card-img-top" alt="Pizza">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Pizza</h5>
+                        <p class="card-text">Cheesy, hot & delicious pizzas.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-controller="Home" asp-action="Menu" asp-route-category="Burger" class="text-decoration-none">
+                <div class="card h-100 shadow-sm hover-shadow">
+                    <img src="/images/burger.jpg" class="card-img-top" alt="Burger">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Burgers</h5>
+                        <p class="card-text">Juicy burgers for every taste.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-controller="Home" asp-action="Menu" asp-route-category="Dessert" class="text-decoration-none">
+                <div class="card h-100 shadow-sm hover-shadow">
+                    <img src="/images/dessert.jpg" class="card-img-top" alt="Desserts">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Desserts</h5>
+                        <p class="card-text">Sweet treats to complete your meal.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

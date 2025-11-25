@@ -1,0 +1,21 @@
+﻿@model RestaurantApp.Models.Order
+
+<div class="container py-4">
+    <h2>Order Confirmation</h2>
+    <p>Thank you! Your Order ID: <strong>@Model.Id</strong></p>
+
+    <p><strong>Address:</strong> @Model.Address</p>
+    <p><strong>Phone:</strong> @Model.Phone</p>
+
+    <h4>Items</h4>
+    <ul class="list-group mb-3">
+        @foreach (var item in Model.Items)
+        {
+            <li class="list-group-item">
+                @item.Name x @item.Quantity — ₹@item.Price
+            </li>
+        }
+    </ul>
+
+    <h4>Total: ₹@Model.TotalAmount</h4>
+</div>
