@@ -1,14 +1,17 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="container py-5">
     <h2 class="text-center mb-4">Explore Categories</h2>
     <div class="row g-4">
+
+        <!-- Pizza -->
         <div class="col-md-4">
             <a asp-controller="Home" asp-action="Menu" asp-route-category="Pizza" class="text-decoration-none">
                 <div class="card h-100 shadow-sm hover-shadow">
-                    <img src="/images/pizza.jpg" class="card-img-top" alt="Pizza">
+                    <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=728&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                         class="card-img-top" alt="Pizza">
                     <div class="card-body text-center">
                         <h5 class="card-title">Pizza</h5>
                         <p class="card-text">Cheesy, hot & delicious pizzas.</p>
@@ -16,10 +19,13 @@
                 </div>
             </a>
         </div>
+
+        <!-- Burger -->
         <div class="col-md-4">
             <a asp-controller="Home" asp-action="Menu" asp-route-category="Burger" class="text-decoration-none">
                 <div class="card h-100 shadow-sm hover-shadow">
-                    <img src="/images/burger.jpg" class="card-img-top" alt="Burger">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                         class="card-img-top" alt="Burger">
                     <div class="card-body text-center">
                         <h5 class="card-title">Burgers</h5>
                         <p class="card-text">Juicy burgers for every taste.</p>
@@ -27,10 +33,13 @@
                 </div>
             </a>
         </div>
+
+        <!-- Dessert -->
         <div class="col-md-4">
             <a asp-controller="Home" asp-action="Menu" asp-route-category="Dessert" class="text-decoration-none">
                 <div class="card h-100 shadow-sm hover-shadow">
-                    <img src="/images/dessert.jpg" class="card-img-top" alt="Desserts">
+                    <img src="https://plus.unsplash.com/premium_photo-1667546202654-e7574a20872c?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                         class="card-img-top" alt="Desserts">
                     <div class="card-body text-center">
                         <h5 class="card-title">Desserts</h5>
                         <p class="card-text">Sweet treats to complete your meal.</p>
@@ -38,5 +47,6 @@
                 </div>
             </a>
         </div>
+
     </div>
 </div>
